@@ -3,21 +3,21 @@ Minimal implementation of AES in counter mode with a key length of 256 bit.
 Quickstart:
 -----------
 
-#include <aes.h>
-AES aes;
-for (char i = 0; i < 32; i++) {
-	aes.key[i] = i; // set the key
-}
-for (char i = 0; i < 15; i++) {
-	aes.counter[i] = 0;
-}
-aes.counter[15] = 1;
+	#include <aes.h>
+	AES aes;
+	for (char i = 0; i < 32; i++) {
+		aes.key[i] = i; // set the key
+	}
+	for (char i = 0; i < 15; i++) {
+		aes.counter[i] = 0;
+	}
+	aes.counter[15] = 1;
 
-char msg[] = "Hello world";
-// encrypt msg in place
-for (char i = 0; i < 11; i++) {
-	aes.process(&msg[i]);
-}
+	char msg[] = "Hello world";
+	// encrypt msg in place
+	for (char i = 0; i < 11; i++) {
+		aes.process(&msg[i]);
+	}
 
 The implementation and header file are aes-demo/aes.{cpp,h}.
 The code uses approximately 3k of program memory.
