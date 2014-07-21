@@ -13,7 +13,7 @@ for (char i = 0; i < 15; i++) {
 }
 aes.counter[15] = 1;
 
-char msg[] = 'Hello world';
+char msg[] = "Hello world";
 // encrypt msg in place
 for (char i = 0; i < 11; i++) {
 	aes.process(&msg[i]);
